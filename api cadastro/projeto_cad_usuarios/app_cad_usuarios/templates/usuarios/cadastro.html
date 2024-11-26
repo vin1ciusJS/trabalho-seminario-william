@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Cadastro de Usuário - Suricatos SA</title>
+  <style>
+    body {
+      background-color: #e9ecef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 700px;
+      width: 100%;
+    }
+    .form-control {
+      margin-bottom: 1rem;
+    }
+    .btn-custom {
+      background-color: #343a40;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+    .btn-custom:hover {
+      background-color: #23272b;
+    }
+    .row-cols-2 > .col {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="{% url 'listagem_usuarios' %}" method="post">
+    <div class="container">
+      {% csrf_token %}
+      <h1>Cadastro de Usuários</h1>
+      <div class="row row-cols-2">
+        <div class="col">
+          <label for="nome" class="form-label">Nome</label>
+          <input id="nome" name="nome" class="form-control" type="text" required>
+        </div>
+        <div class="col">
+          <label for="sobrenome" class="form-label">Sobrenome</label>
+          <input id="sobrenome" name="sobrenome" class="form-control" type="text" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="cpf" class="form-label">CPF</label>
+        <input id="cpf" name="cpf" class="form-control" type="text" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input id="email" name="email" class="form-control" type="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="idade" class="form-label">Idade</label>
+        <input id="idade" name="idade" class="form-control" type="number" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefone" class="form-label">Telefone</label>
+        <input id="telefone" name="telefone" class="form-control" type="tel" required>
+      </div>
+      <div class="row row-cols-2">
+        <div class="col">
+          <label for="endereco" class="form-label">Endereço</label>
+          <input id="endereco" name="endereco" class="form-control" type="text" required>
+        </div>
+        <div class="col">
+          <label for="endereco_imovel" class="form-label">Endereço do Imóvel</label>
+          <input id="endereco_imovel" name="endereco_imovel" class="form-control" type="text" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input id="senha" name="password" class="form-control" type="password" required>
+      </div>
+      <div class="mb-3">
+        <label for="confirmar_senha" class="form-label">Confirmar Senha</label>
+        <input id="confirmar_senha" name="confirmar_password" class="form-control" type="password" required>
+      </div>
+      <button type="submit" class="btn btn-custom">Cadastrar</button>
+    </div>
+  </form>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  -->
+</body>
+</html>
